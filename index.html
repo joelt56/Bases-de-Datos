@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cuestionario sobre bases de datos</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #eef3f8;
+      margin: 0;
+      padding: 20px;
+      color: #1f2937;
+    }
+
+    .contenedor {
+      max-width: 900px;
+      margin: auto;
+      background: white;
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 3px 12px #0002;
+    }
+
+    h1 {
+      color: #174a7e;
+      text-align: center;
+    }
+
+    .instrucciones {
+      background: #e8f1fb;
+      padding: 15px;
+      border-left: 5px solid #2674b8;
+      margin-bottom: 20px;
+    }
+
+    .pregunta {
+      border: 1px solid #d1d5db;
+      border-radius: 8px;
+      padding: 18px;
+      margin-bottom: 20px;
+    }
+
+    .pregunta h3 {
+      margin-top: 0;
+      color: #174a7e;
+    }
+
+    label {
+      display: block;
+      padding: 9px;
+      margin: 5px 0;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    label:hover {
+      background: #f0f6fc;
+    }
+
+    .retroalimentacion {
+      display: none;
+      margin-top: 12px;
+      padding: 12px;
+      border-radius: 6px;
+      font-weight: bold;
+    }
+
+    .correcta {
+      background: #dcfce7;
+      color: #166534;
+    }
+
+    .incorrecta {
+      background: #fee2e2;
+      color: #991b1b;
+    }
+
+    button {
+      display: block;
+      margin: 25px auto 10px;
+      background: #174a7e;
+      color: white;
+      border: none;
+      padding: 13px 25px;
+      border-radius: 7px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #0f355a;
+    }
+
+    #resultado {
+      display: none;
+      text-align: center;
+      padding: 20px;
+      margin-top: 25px;
+      border-radius: 8px;
+      background: #fef3c7;
+      color: #78350f;
+      font-size: 20px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="contenedor">
+    <h1>Las bases de datos en nuestra vida cotidiana</h1>
+
+    <div class="instrucciones">
+      <strong>Instrucciones:</strong>
+      Selecciona una respuesta para cada pregunta y presiona
+      <strong>“Calificar cuestionario”</strong>. Recibirás retroalimentación
+      automática en cada pregunta.
+    </div>
+
+    <form id="cuestionario">
+
+      <div class="pregunta">
+        <h3>1. Cuando compras en un supermercado y se escanea el código de barras, ¿qué acción realiza principalmente la base de datos?</h3>
+        <label><input type="radio" name="p1" value="a"> a) Crea una nueva red social para el producto.</label>
+        <label><input type="radio" name="p1" value="b"> b) Consulta el precio y descuenta la unidad del inventario.</label>
+        <label><input type="radio" name="p1" value="c"> c) Formatea la computadora de la caja.</label>
+        <label><input type="radio" name="p1" value="d"> d) Guarda la foto del comprador.</label>
+        <div id="retro1" class="retroalimentacion"></div>
+      </div>
+
+      <div class="pregunta">
+        <h3>2. ¿Cuál situación NO involucra directamente una base de datos?</h3>
+        <label><input type="radio" name="p2" value="a"> a) Buscar una película por género en una plataforma de streaming.</label>
+        <label><input type="radio" name="p2" value="b"> b) Consultar el saldo bancario desde una aplicación.</label>
+        <label><input type="radio" name="p2" value="c"> c) Escribir una nota con lápiz en una libreta de papel.</label>
+        <label><input type="radio" name="p2" value="d"> d) Reservar un asiento de avión mediante una página web.</label>
+        <div id="retro2" class="retroalimentacion"></div>
+      </div>
+
+      <div class="pregunta">
+        <h3>3. ¿Qué función cumple una base de datos al buscar un hashtag en una red social?</h3>
+        <label><input type="radio" name="p3" value="a"> a) Diseña los colores de la pantalla.</label>
+        <label><input type="radio" name="p3" value="b"> b) Filtra y recupera publicaciones que contienen esa etiqueta.</label>
+        <label><input type="radio" name="p3" value="c"> c) Aumenta la velocidad de la batería.</label>
+        <label><input type="radio" name="p3" value="d"> d) Borra las fotos antiguas del perfil.</label>
+        <div id="retro3" class="retroalimentacion"></div>
+      </div>
+
+      <div class="pregunta">
+        <h3>4. ¿Cuál es una ventaja de usar bases de datos para gestionar expedientes médicos?</h3>
+        <label><input type="radio" name="p4" value="a"> a) Cualquier persona puede ver el historial.</label>
+        <label><input type="radio" name="p4" value="b"> b) Reemplaza a los médicos especialistas.</label>
+        <label><input type="radio" name="p4" value="c"> c) Permite acceder rápida, organizada y seguramente a los antecedentes.</label>
+        <label><input type="radio" name="p4" value="d"> d) Evita que los medicamentos caduquen.</label>
+        <div id="retro4" class="retroalimentacion"></div>
+      </div>
+
+      <div class="pregunta">
+        <h3>5. ¿Qué garantiza que dos personas no compren el mismo producto si queda una unidad?</h3>
+        <label><input type="radio" name="p5" value="a"> a) La actualización y el control de transacciones en tiempo real.</label>
+        <label><input type="radio" name="p5" value="b"> b) El diseño del logotipo.</label>
+        <label><input type="radio" name="p5" value="c"> c) Las opiniones de otros compradores.</label>
+        <label><input type="radio" name="p5" value="d"> d) La resolución de la pantalla.</label>
+        <div id="retro5" class="retroalimentacion"></div>
+      </div>
+
+      <div class="pregunta">
+        <h3>6. ¿Qué ocurre al buscar un libro por el nombre del autor en una biblioteca?</h3>
+        <label><input type="radio" name="p6" value="a"> a) Se crea un libro nuevo.</label>
+        <label><input type="radio" name="p6" value="b"> b) Se ejecuta una consulta y se muestra la ubicación del libro.</label>
+        <label><input type="radio" name="p6" value="c"> c) Se imprime automáticamente una copia.</label>
+        <label><input type="radio" name="p6" value="d"> d) Se eliminan los libros de otros autores.</label>
+        <div id="retro6" class="retroalimentacion"></div>
+      </div>
+
+      <div class="pregunta">
+        <h3>7. ¿Cómo ayuda una plataforma educativa a un profesor?</h3>
+        <label><input type="radio" name="p7" value="a"> a) Evalúa automáticamente la actitud física del estudiante.</label>
+        <label><input type="radio" name="p7" value="b"> b) Almacena entregas, calificaciones y asistencia de forma organizada.</label>
+        <label><input type="radio" name="p7" value="c"> c) Dicta las clases presenciales.</label>
+        <label><input type="radio" name="p7" value="d"> d) Compra los útiles escolares.</label>
+        <div id="retro7" class="retroalimentacion"></div>
+      </div>
+
+      <div class="pregunta">
+        <h3>8. ¿Qué función cumple una base de datos en una aplicación de mapas?</h3>
+        <label><input type="radio" name="p8" value="a"> a) Fabrica vehículos.</label>
+        <label><input type="radio" name="p8" value="b"> b) Guarda datos de calles, rutas y lugares para calcular recorridos.</label>
+        <label><input type="radio" name="p8" value="c"> c) Controla todos los semáforos.</label>
+        <label><input type="radio" name="p8" value="d"> d) Cambia el clima.</label>
+        <div id="retro8" class="retroalimentacion"></div>
+      </div>
+
+      <div class="pregunta">
+        <h3>9. ¿Por qué son importantes la seguridad y la encriptación en bases de datos?</h3>
+        <label><input type="radio" name="p9" value="a"> a) Para evitar que la computadora sea lenta.</label>
+        <label><input type="radio" name="p9" value="b"> b) Para impedir accesos no autorizados y proteger la privacidad.</label>
+        <label><input type="radio" name="p9" value="c"> c) Para cambiar el color de las páginas.</label>
+        <label><input type="radio" name="p9" value="d"> d) Para no reiniciar el teléfono.</label>
+        <div id="retro9" class="retroalimentacion"></div>
+      </div>
+
+      <div class="pregunta">
+        <h3>10. Si se escribe mal tu nombre en el registro civil, ¿qué problema se produce?</h3>
+        <label><input type="radio" name="p10" value="a"> a) No podrás usar la computadora durante un mes.</label>
+        <label><input type="radio" name="p10" value="b"> b) Habrá inconsistencias en trámites oficiales y validación de identidad.</label>
+        <label><input type="radio" name="p10" value="c"> c) Se destruirá el sistema operativo.</label>
+        <label><input type="radio" name="p10" value="d"> d) Las impresoras dejarán de funcionar.</label>
+        <div id="retro10" class="retroalimentacion"></div>
+      </div>
+
+      <button type="button" onclick="calificar()">Calificar cuestionario</button>
+      <button type="button" onclick="reiniciar()">Reiniciar</button>
+    </form>
+
+    <div id="resultado"></div>
+  </div>
+
+  <script>
+    const respuestas = {
+      p1: "b",
+      p2: "c",
+      p3: "b",
+      p4: "c",
+      p5: "a",
+      p6: "b",
+      p7: "b",
+      p8: "b",
+      p9: "b",
+      p10: "b"
+    };
+
+    const retroalimentacion = {
+      p1: {
+        correcta: "¡Excelente! El código de barras permite consultar el precio y actualizar el inventario.",
+        incorrecta: "El sistema consulta los datos del producto y actualiza las existencias disponibles."
+      },
+      p2: {
+        correcta: "¡Muy bien! Escribir en una libreta de papel es un registro analógico.",
+        incorrecta: "Las plataformas digitales, bancos y reservas utilizan bases de datos para organizar información."
+      },
+      p3: {
+        correcta: "¡Correcto! La base de datos filtra las publicaciones que contienen el hashtag.",
+        incorrecta: "La base de datos organiza e indexa publicaciones para encontrarlas mediante etiquetas."
+      },
+      p4: {
+        correcta: "¡Exacto! Permite consultar los antecedentes médicos de forma rápida, organizada y segura.",
+        incorrecta: "Las bases de datos médicas facilitan el acceso seguro a la información clínica; no reemplazan a los médicos."
+      },
+      p5: {
+        correcta: "¡Excelente! Las transacciones en tiempo real mantienen consistente el inventario.",
+        incorrecta: "El control de transacciones evita que se venda dos veces la última unidad disponible."
+      },
+      p6: {
+        correcta: "¡Muy bien! Buscar por autor es una consulta que filtra los registros y muestra la ubicación.",
+        incorrecta: "Una búsqueda consulta y filtra información existente; no crea, imprime ni elimina libros."
+      },
+      p7: {
+        correcta: "¡Correcto! La plataforma almacena entregas, calificaciones y asistencia.",
+        incorrecta: "Las bases de datos educativas organizan el historial académico de los estudiantes."
+      },
+      p8: {
+        correcta: "¡Exacto! Guarda información geográfica para calcular rutas y mostrar lugares.",
+        incorrecta: "La base de datos procesa información de calles, rutas, coordenadas y lugares."
+      },
+      p9: {
+        correcta: "¡Muy bien! La seguridad protege la privacidad y evita accesos no autorizados.",
+        incorrecta: "La encriptación protege la confidencialidad e integridad de la información."
+      },
+      p10: {
+        correcta: "¡Correcto! Un dato incorrecto puede causar problemas en trámites y validaciones legales.",
+        incorrecta: "La integridad de datos exige que la información sea exacta y precisa."
+      }
+    };
+
+    function calificar() {
+      let puntuacion = 0;
+      let respondidas = 0;
+
+      for (let i = 1; i <= 10; i++) {
+        const pregunta = "p" + i;
+        const seleccionada = document.querySelector(
+          `input[name="${pregunta}"]:checked`
+        );
+
+        const mensaje = document.getElementById("retro" + i);
+        mensaje.style.display = "block";
+
+        if (!seleccionada) {
+          mensaje.className = "retroalimentacion incorrecta";
+          mensaje.textContent = "No respondiste esta pregunta.";
+          continue;
+        }
+
+        respondidas++;
+
+        if (seleccionada.value === respuestas[pregunta]) {
+          puntuacion++;
+          mensaje.className = "retroalimentacion correcta";
+          mensaje.textContent = retroalimentacion[pregunta].correcta;
+        } else {
+          mensaje.className = "retroalimentacion incorrecta";
+          mensaje.textContent = retroalimentacion[pregunta].incorrecta;
+        }
+      }
+
+      const porcentaje = puntuacion * 10;
+      let nivel;
+
+      if (porcentaje >= 90) {
+        nivel = "¡Excelente dominio del tema!";
+      } else if (porcentaje >= 70) {
+        nivel = "Buen trabajo, pero puedes seguir reforzando algunos conceptos.";
+      } else if (porcentaje >= 60) {
+        nivel = "Aprobado. Te recomendamos repasar el contenido.";
+      } else {
+        nivel = "Necesitas revisar nuevamente el tema de bases de datos.";
+      }
+
+      const resultado = document.getElementById("resultado");
+      resultado.style.display = "block";
+      resultado.innerHTML = `
+        Resultado: ${puntuacion}/10 (${porcentaje}%)<br>
+        Preguntas respondidas: ${respondidas}/10<br>
+        ${nivel}
+      `;
+
+      window.scrollTo({
+        top: document.body.scrollHeight,
+        behavior: "smooth"
+      });
+    }
+
+    function reiniciar() {
+      document.getElementById("cuestionario").reset();
+
+      for (let i = 1; i <= 10; i++) {
+        const mensaje = document.getElementById("retro" + i);
+        mensaje.style.display = "none";
+        mensaje.textContent = "";
+      }
+
+      document.getElementById("resultado").style.display = "none";
+    }
+  </script>
+</body>
+</html>
